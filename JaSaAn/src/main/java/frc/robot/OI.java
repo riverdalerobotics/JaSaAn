@@ -10,8 +10,13 @@ public class OI {
     }
     public boolean intake(){
         return operatorController.getLeftBumper();
+
+
     }
- //   public double 
+ // public boolean robot_Move (){
+ //       return operatorController.getLeftStickButton();
+ //       return operatorController.getRightBumper();   
+ //} 
 
     
 }
