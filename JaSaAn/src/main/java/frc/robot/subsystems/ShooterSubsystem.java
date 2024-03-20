@@ -5,12 +5,25 @@
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
+
+
 
 public class ShooterSubsystem extends SubsystemBase {
   /** Creates a new ShooterSubsystem. */
+  
+  WPI_VictorSPX Shootermotor;
   public ShooterSubsystem() {
+    Shootermotor = new WPI_VictorSPX(50);
+
+  }
+
+  public void Shoot() {
+    Shootermotor.set(1);
     
   }
+
+
 
   @Override
   public void periodic() {
