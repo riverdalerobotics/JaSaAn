@@ -11,6 +11,13 @@ public class OI {
     public boolean intake(){
         return operatorController.getLeftBumper();
     }
+
+    public boolean indexForwards() {
+        return operatorController.getAButtonPressed();
+    }
+    public boolean indexBackwards() {
+        return operatorController.getBButtonPressed();
+    }
  //   public double 
 
     
