@@ -55,6 +55,11 @@ public class ChassisSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
 
   }
+  /**
+   * this is a method for the moving of the robot yes
+   * @param speed
+   * @param turn
+   */
        public void move (double speed, double turn){
         drive.arcadeDrive(speed, turn);
        } 

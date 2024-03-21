@@ -8,9 +8,9 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.Robot;
 
 
-public class ChassisCommand extends Command {
+public class ChassisDefaultCommand extends Command {
   /** Creates a new ChassisCommand. */
-  public ChassisCommand() {
+  public ChassisDefaultCommand() {
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(Robot.CHASSIS_SUBSYSTEM);
   }
@@ -22,7 +22,7 @@ public class ChassisCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-  //  Robot.CHASSIS_SUBSYSTEM.move(Robot.oi.getSpeed(), Robot.oi.getTurn());
+    Robot.CHASSIS_SUBSYSTEM.move(Robot.oi.getSpeed(), Robot.oi.getTurn());
   }
 
   // Called once the command ends or is interrupted.

@@ -7,8 +7,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import frc.robot.commands.ChassisCommand;
-import frc.robot.commands.DefaultCommands.IntakeCommand;
+import frc.robot.commands.ChassisDefaultCommand;
+import frc.robot.commands.DefaultCommands.IntakeDeafultCommand;
 import frc.robot.subsystems.ChassisSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
 
@@ -24,11 +24,11 @@ public class Robot extends TimedRobot {
   public static final IntakeSubsystem INTAKE_SUBSYSTEM= new IntakeSubsystem();
   public static final OI oi =  new OI();
 //  private RobotContainer m_robotContainer;
-  public static final IntakeCommand INTAKE_COMMAND = new IntakeCommand();
+  public static final IntakeDeafultCommand INTAKE_COMMAND = new IntakeDeafultCommand();
 
   public static final ChassisSubsystem  CHASSIS_SUBSYSTEM = new ChassisSubsystem();
 
-  public static final ChassisCommand CHASSIS_COMMAND = new ChassisCommand();
+  public static final ChassisDefaultCommand CHASSIS_COMMAND = new ChassisDefaultCommand();
 
   /**
    * This function is run when the robot is first started up and should be used for any

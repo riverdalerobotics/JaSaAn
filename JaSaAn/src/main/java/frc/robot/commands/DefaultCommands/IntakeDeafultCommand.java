@@ -9,10 +9,10 @@ import frc.robot.subsystems.IntakeSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /** An example command that uses an example subsystem. */
-public class IntakeCommand extends Command {
+public class IntakeDeafultCommand extends Command {
 
 
-  public IntakeCommand() {
+  public IntakeDeafultCommand() {
   
 
     // Use addRequirements() here to declare subsystem dependencies.
