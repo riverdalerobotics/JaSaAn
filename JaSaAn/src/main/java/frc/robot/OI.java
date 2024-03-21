@@ -16,6 +16,12 @@ public class OI {
 
 //        return operatorController.getRightStickButton();
     }
+
+
+    public double shooter() {
+        
+        return operatorController.getLeftTriggerAxis();
+    }
  // public boolean robot_Move (){
  //       return operatorController.getLeftStickButton();
  //       return operatorController.getRightBumper();   
