@@ -12,15 +12,20 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 public class ShooterSubsystem extends SubsystemBase {
   /** Creates a new ShooterSubsystem. */
   
-  WPI_VictorSPX Shootermotor;
+  WPI_VictorSPX shooterMotor;
   public ShooterSubsystem() {
-    Shootermotor = new WPI_VictorSPX(50);
+    shooterMotor = new WPI_VictorSPX(50);
 
   }
 
-  public void Shoot() {
-    Shootermotor.set(1);
+  public void shoot() {
+    shooterMotor.set(1);
     
+  }
+
+  public void customShoot(double motorSpeed) {
+    shooterMotor.set(motorSpeed);
+
   }
 
 

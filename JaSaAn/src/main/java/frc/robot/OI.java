@@ -18,7 +18,8 @@ public class OI {
     }
 
 
-    public double Shooter() {
+    public double shooter() {
+        
         return operatorController.getLeftTriggerAxis();
     }
  // public boolean robot_Move (){
