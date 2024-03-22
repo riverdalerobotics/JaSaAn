@@ -11,6 +11,15 @@ public class OI {
     public boolean intake(){
         return operatorController.getLeftBumper();
     }
+
+    public boolean indexForwards() {
+        return operatorController.getAButtonPressed();
+    }
+    public boolean indexBackwards() {
+        return operatorController.getBButtonPressed();
+    }
+ //   public double 
+
     public boolean chassismethod () {
         return operatorController.getLeftStickButton();
 
@@ -26,6 +35,4 @@ public class OI {
  //       return operatorController.getLeftStickButton();
  //       return operatorController.getRightBumper();   
  //} 
-
-    
 }

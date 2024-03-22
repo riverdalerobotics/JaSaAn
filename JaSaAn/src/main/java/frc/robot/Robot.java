@@ -7,6 +7,8 @@ package frc.robot;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
+import frc.robot.commands.IndexDefault;
+import frc.robot.subsystems.IndexSubsystem;
 import frc.robot.commands.ChassisDefaultCommand;
 import frc.robot.commands.DefaultCommands.IntakeDeafultCommand;
 import frc.robot.subsystems.ChassisSubsystem;
@@ -30,6 +32,11 @@ public class Robot extends TimedRobot {
 
   public static final ChassisDefaultCommand CHASSIS_COMMAND = new ChassisDefaultCommand();
 
+  public static final IndexSubsystem INDEX_SUBSYSTEM = new IndexSubsystem();
+
+  public static final IndexDefault INDEX_COMMAND = new IndexDefault();
+
+  
   /**
    * This function is run when the robot is first started up and should be used for any
    * initialization code.
@@ -38,6 +45,7 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
+
 //    m_robotContainer = new RobotContainer();
     CommandScheduler.getInstance().setDefaultCommand(INTAKE_SUBSYSTEM, INTAKE_COMMAND);
     CommandScheduler.getInstance().setDefaultCommand(CHASSIS_SUBSYSTEM, CHASSIS_COMMAND);
