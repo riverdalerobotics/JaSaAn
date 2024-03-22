@@ -9,6 +9,10 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.commands.IndexDefault;
 import frc.robot.subsystems.IndexSubsystem;
+import frc.robot.commands.ChassisDefaultCommand;
+import frc.robot.commands.DefaultCommands.IntakeDeafultCommand;
+import frc.robot.subsystems.ChassisSubsystem;
+import frc.robot.subsystems.IntakeSubsystem;
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -19,7 +23,14 @@ import frc.robot.subsystems.IndexSubsystem;
 public class Robot extends TimedRobot {
   private Command m_autonomousCommand;
 
-  private RobotContainer m_robotContainer;
+  public static final IntakeSubsystem INTAKE_SUBSYSTEM= new IntakeSubsystem();
+  public static final OI oi =  new OI();
+//  private RobotContainer m_robotContainer;
+  public static final IntakeDeafultCommand INTAKE_COMMAND = new IntakeDeafultCommand();
+
+  public static final ChassisSubsystem  CHASSIS_SUBSYSTEM = new ChassisSubsystem();
+
+  public static final ChassisDefaultCommand CHASSIS_COMMAND = new ChassisDefaultCommand();
 
   public static final IndexSubsystem INDEX_SUBSYSTEM = new IndexSubsystem();
 
@@ -34,8 +45,10 @@ public class Robot extends TimedRobot {
   public void robotInit() {
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
-   // m_robotContainer = new RobotContainer();
-    
+
+//    m_robotContainer = new RobotContainer();
+    CommandScheduler.getInstance().setDefaultCommand(INTAKE_SUBSYSTEM, INTAKE_COMMAND);
+    CommandScheduler.getInstance().setDefaultCommand(CHASSIS_SUBSYSTEM, CHASSIS_COMMAND);
   }
 
   /**
@@ -64,7 +77,7 @@ public class Robot extends TimedRobot {
   /** This autonomous runs the autonomous command selected by your {@link RobotContainer} class. */
   @Override
   public void autonomousInit() {
-    m_autonomousCommand = m_robotContainer.getAutonomousCommand();
+  //  m_autonomousCommand = m_robotContainer.getAutonomousCommand();
 
     // schedule the autonomous command (example)
     if (m_autonomousCommand != null) {
@@ -89,7 +102,9 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {}
+  public void teleopPeriodic() {
+    CommandScheduler.getInstance().run();
+  }
 
   @Override
   public void testInit() {
