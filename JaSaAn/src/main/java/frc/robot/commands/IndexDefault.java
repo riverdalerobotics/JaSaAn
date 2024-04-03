@@ -20,6 +20,7 @@ public class IndexDefault extends Command {
   public IndexDefault(OI oi, IndexSubsystem index) {
    this.oi = oi;
    this.index = index;
+   addRequirements(index);
   }
 
   // Called when the command is initially scheduled.

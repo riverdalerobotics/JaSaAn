@@ -23,11 +23,13 @@ public class OI {
 
     // controls to move robot 
     public double getSpeed(){
-        return operatorController.getLeftTriggerAxis();
+        return operatorController.getLeftY();
+
     }
     public double getTurn (){
-        return operatorController.getRightTriggerAxis();
+        return operatorController.getRightX();
     }
+
     public double shooter() {
         
         return operatorController.getLeftTriggerAxis();
