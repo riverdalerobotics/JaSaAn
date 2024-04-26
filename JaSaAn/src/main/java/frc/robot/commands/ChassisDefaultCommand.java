@@ -22,9 +22,8 @@ public class ChassisDefaultCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    Robot.CHASSIS_SUBSYSTEM.move(Robot.oi.getSpeed(), Robot.oi.getTurn());
-  }
 
+    Robot.CHASSIS_SUBSYSTEM.move(Robot.oi.getSpeed(), Robot.oi.getTurn());}
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {}

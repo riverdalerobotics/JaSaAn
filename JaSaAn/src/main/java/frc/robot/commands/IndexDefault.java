@@ -14,12 +14,13 @@ import frc.robot.subsystems.IndexSubsystem;
 
 public class IndexDefault extends Command {
   OI oi;
-  XboxController operatorController;
   IndexSubsystem index;
 //creating the objects for the code to use
  
-  public IndexDefault() {
-    // Use addRequirements() here to declare subsystem dependencies.
+  public IndexDefault(OI oi, IndexSubsystem index) {
+   this.oi = oi;
+   this.index = index;
+   addRequirements(index);
   }
 
   // Called when the command is initially scheduled.
@@ -30,15 +31,20 @@ public class IndexDefault extends Command {
   @Override
   public void execute() {
 
-   
-    if (operatorController.getAButtonPressed()) {
+   //If the oi receives the input that equals moving forward, the robot motor will be set to +1
+    if (oi.indexForwards()) {
      
       index.indexForwards();
-
-    } else if (operatorController.getBButtonPressed()) {
+      // if not pressed, it will check if the button for moving backwards was pressed. 
+    } else if (oi.indexBackwards()) {
 
       index.indexBackwards();
-    } 
+      
+    } else {
+      //Finally, if no buttons are being pressed, the index is to stop. 
+      index.indexStop();
+
+    }
 
   }
 

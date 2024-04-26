@@ -34,7 +34,7 @@ public class Robot extends TimedRobot {
 
   public static final IndexSubsystem INDEX_SUBSYSTEM = new IndexSubsystem();
 
-  public static final IndexDefault INDEX_COMMAND = new IndexDefault();
+  //public static final IndexDefault INDEX_COMMAND = new IndexDefault();
 
   
   /**
