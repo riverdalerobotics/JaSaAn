@@ -7,7 +7,7 @@ import com.ctre.phoenix.motorcontrol.can.WPI_VictorSPX;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.Encoder;
-import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+
 //import frc.robot.RobotMap;
 
 public class ChassisSubsystem extends SubsystemBase {
@@ -20,33 +20,36 @@ public class ChassisSubsystem extends SubsystemBase {
     WPI_VictorSPX left_chassis_motor2;
     WPI_VictorSPX left_chassis_motor3;
 
-    Encoder right_Encoder;
 
     WPI_VictorSPX right_front_motor;
     WPI_VictorSPX right_chassis_motor2;
     WPI_VictorSPX right_chassis_motor3;
-
-
-    DifferentialDrive drive; 
+    WPI_VictorSPX thisistest;
 
   public ChassisSubsystem() {
 
-    this.left_front_motor = new WPI_VictorSPX(10);
-    this.left_chassis_motor2 = new WPI_VictorSPX(11);
-    this.left_chassis_motor3 = new WPI_VictorSPX(12);
-
-    left_chassis_motor2.follow(left_front_motor);
-    left_chassis_motor3.follow(left_chassis_motor3);
-
-    this.right_front_motor = new WPI_VictorSPX(20);
-    this.right_chassis_motor2 = new WPI_VictorSPX(21);
-    this.right_chassis_motor3 = new WPI_VictorSPX(22);
+      left_front_motor = new WPI_VictorSPX(10);
+      left_chassis_motor2 = new WPI_VictorSPX(11);
+      left_chassis_motor3 = new WPI_VictorSPX(12);
 
 
-    right_chassis_motor2.follow(right_front_motor);
-    right_chassis_motor3.follow(right_front_motor);
-    
-    drive = new DifferentialDrive(left_front_motor, right_front_motor);
+      right_front_motor =  new WPI_VictorSPX(20);
+      right_chassis_motor2 = new WPI_VictorSPX(21);
+      right_chassis_motor3 = new WPI_VictorSPX(22);
+
+
+      public void driveChassis(double turn, double speed){
+        double driveRight = turn +speed;
+        double driveLeft = turn - speed;
+        right_front_motor.set(driveRight);
+        right_chassis_motor2.set(driveRight);
+        right_chassis_motor3.set(driveRight);
+        left_front_motor.set(driveLeft);
+        left_chassis_motor2.set(driveLeft);
+        left_chassis_motor3.set(driveLeft);
+      }
+
+
 
   }
 
@@ -61,6 +64,6 @@ public class ChassisSubsystem extends SubsystemBase {
    * @param turn
    */
        public void move (double speed, double turn){
-        drive.arcadeDrive(speed, turn);
+
        } 
 }
