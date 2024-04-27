@@ -5,20 +5,22 @@ import edu.wpi.first.wpilibj.XboxController;
 
 public class OI {
     XboxController operatorController;
+    XboxController intakeController;
     
     
     public OI() {
         operatorController = new XboxController(0);
+        intakeController = new XboxController(1);
     }
     public boolean intake(){
-        return operatorController.getLeftBumper();
+        return intakeController.getLeftBumper();
     }
 
     public boolean indexForwards() {
-        return operatorController.getAButton();
+        return intakeController.getAButton();
     }
     public boolean indexBackwards() {
-        return operatorController.getBButton();
+        return intakeController.getBButton();
     }
 
     // controls to move robot 

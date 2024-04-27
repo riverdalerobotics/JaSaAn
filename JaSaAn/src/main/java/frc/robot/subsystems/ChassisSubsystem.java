@@ -37,20 +37,17 @@ public class ChassisSubsystem extends SubsystemBase {
       right_chassis_motor2 = new WPI_VictorSPX(21);
       right_chassis_motor3 = new WPI_VictorSPX(22);
 
-
-      public void driveChassis(double turn, double speed){
-        double driveRight = turn +speed;
-        double driveLeft = turn - speed;
-        right_front_motor.set(driveRight);
-        right_chassis_motor2.set(driveRight);
-        right_chassis_motor3.set(driveRight);
-        left_front_motor.set(driveLeft);
-        left_chassis_motor2.set(driveLeft);
-        left_chassis_motor3.set(driveLeft);
-      }
-
-
-
+  }
+  
+  public void driveChassis(double turn, double speed){
+      double driveRight = turn + speed;
+      double driveLeft = turn - speed;
+      right_front_motor.set(driveRight);
+      right_chassis_motor2.set(driveRight);
+      right_chassis_motor3.set(driveRight);
+      left_front_motor.set(driveLeft);
+      left_chassis_motor2.set(driveLeft);
+      left_chassis_motor3.set(driveLeft);
   }
 
   @Override
@@ -58,12 +55,6 @@ public class ChassisSubsystem extends SubsystemBase {
     // This method will be called once per scheduler run
 
   }
-  /**
-   * this is a method for the moving of the robot yes
-   * @param speed
-   * @param turn
-   */
-       public void move (double speed, double turn){
 
-       } 
+
 }
